@@ -9,9 +9,10 @@ import { LinkItems } from './LinkItems';
 
 
 const NavContainer = styled.nav`
-  position: fixed;
+  position: ${ props => props.position };
   width: 100vw;
-  background-color: rgba(0,0,0,0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  background-color: ${ props => props.toggle ? 'black' : 'rgba(0,0,0,0.8)' };
   color: ${props => props.theme.lightGray};
   height: 44px;
 
@@ -19,7 +20,6 @@ const NavContainer = styled.nav`
     ${props => {
     if (props.toggle) {
       return `
-          background-color: black;
           height: 100vh;
           transition: all 0.8s cubic-bezier(.32,.1,.24,.99);
 
@@ -39,7 +39,7 @@ const Content = styled.div`
   justify-content: space-between;
   max-width: 980px;
   margin: 0 auto;
-  padding: 0 22px;
+ 
 
   @media screen and (max-width: 768px) {
       position: relative;
@@ -128,29 +128,15 @@ const Links = styled.ul`
   @media screen and (max-width: 768px) {
 
         flex-direction: column;
+        /* display: ${ props => ( props.toggle? 'block' : 'none' ) }; */
         align-items: flex-start;
         height: 100%;
         position: absolute;
         top: 48px;
         font-size: 15px;
         padding: 12px 0;
-        transition: all .5s cubic-bezier(.32,.1,.24,.99);
-
-    ${props => {
-    if (props.toggle) {
-      return `
-        opacity: 1;
-        
-        `
-    } else {
-      return `
-        opacity: 0;
-       
-        `
-    }
-  }}
-     
-     
+        top:  ${ props => ( props.toggle? '48px' : '-500px' ) };
+        transition: all 1s cubic-bezier(.32,.1,.24,.99);
 
      li {
       width: 100%;
@@ -161,41 +147,14 @@ const Links = styled.ul`
 `
 
 
-const SectionContent = styled.div`
-  padding-top: 44px;
-  background-color: ${props => props.theme.lightGray};
-  color: ${props => props.theme.darkGray};
-  width: 100%;
-  display: flex;
-
-  p {
-    font-size: 13px;
-    padding: 14px 22px ;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  a {
-    color: ${props => props.theme.blue};
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-      padding-top: 48px;
-    }
-`
-
-
-function Nav() {
+function Nav( {position} ) {
 
   const [clicked, setClicked] = useState(false);
   const onClick = () => setClicked(!clicked);
 
   return (
     <>
-      <NavContainer toggle={clicked}>
+      <NavContainer toggle={clicked} position={ position }>
         <Content>
           <MenuToggle onClick={onClick}>
             <FontAwesomeIcon icon={clicked ? faXmark : faBars} />
@@ -215,9 +174,7 @@ function Nav() {
           <CartIcon />
         </Content>
       </NavContainer>
-      <SectionContent>
-        <p><Link to="">온라인으로 쇼핑하고</Link>하고 무료 배송, 스페셜리스트 지원 등의 혜택을 받으세요.</p>
-      </SectionContent>
+
 
     </>
 
