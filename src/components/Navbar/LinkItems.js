@@ -13,7 +13,7 @@ export const LinkItems = [
   },
   {
     title: 'iPhone',
-    url: '#'
+    url: '/iphone-13'
   },
   {
     title: 'Watch',

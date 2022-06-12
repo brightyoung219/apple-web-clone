@@ -118,7 +118,12 @@ const Links = styled.ul`
   li {
     padding: 12px 12px;
     opacity: 0.8;
+    
+  }
 
+  .link {
+    color: ${props => props.theme.lightGray};
+    opacity: 0.8;
     &:hover {
       opacity: 1;
       transition: opacity 0.3s;
@@ -166,12 +171,14 @@ function Nav( {position} ) {
             {
               LinkItems.map((item, index) => (
                 <li key={index}>
-                  <Link to={item.url}>{item.title}</Link>
+                  <Link className='link' to={item.url}>{item.title}</Link>
                 </li>
               ))
             }
           </Links>
-          <CartIcon />
+          <Link to='/cart'>
+            <CartIcon />
+          </Link>
         </Content>
       </NavContainer>
 

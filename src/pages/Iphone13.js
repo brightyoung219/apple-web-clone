@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Nav from '../components/Navbar/Nav';
-import iphone13L from '../img/apple/iphone13_large.jpeg'; 
-import iphone13M from '../img/apple/iphone13_medium.jpeg'; 
-import iphone13S from '../img/apple/iphone13_small.jpeg'; 
+import iphone13L from '../img/apple/iphone13_large.jpeg';
+import iphone13M from '../img/apple/iphone13_medium.jpeg';
+import iphone13S from '../img/apple/iphone13_small.jpeg';
 import wallpaper from '../img/iphone13_wallpaper.jpeg';
 
 
@@ -35,6 +35,7 @@ const HeaderContent = styled.div`
   p {
     font-size: 21px;
     font-weight: 700;
+    cursor: pointer;
   }
   
 `
@@ -43,14 +44,14 @@ const Btn = styled.button`
   width: 65px;
   height: 24px;
   color: #fff;
-  background-color: ${ props => props.theme.blue };
+  background-color: ${props => props.theme.blue};
   font-size: 11px;
   border: none;
   border-radius: 30px;
   padding: 4px 11px;
 
   &:hover {
-    background-color: #0071e3;
+    background-color: ${props => props.theme.btnHover};
   }
 `;
 
@@ -127,7 +128,7 @@ const SectionContent = styled.div`
   .text-content {
     margin: 0 auto;
     max-width: 980px;
-    color: ${ props => props.theme.lightGray };
+    color: ${props => props.theme.lightGray};
     font-size: 80px;
     font-weight: 700;
     line-height: 1.2;
@@ -178,6 +179,13 @@ const SectionContent = styled.div`
      margin: 0 auto;
      font-size: 32px;
      font-weight: 600;
+
+     li {
+       opacity: 1;
+     }
+     p {
+       opacity: 1;
+     }
    }
   }
 `;
@@ -191,10 +199,10 @@ function Iphone13() {
 
   const handleScroll = () => {
     const scrollPosition = window.pageYOffset;
-    setScrollY(scrollPosition)
+    setScrollY(scrollPosition);
   };
 
-  useEffect( () => {
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
     return () => {
@@ -202,39 +210,37 @@ function Iphone13() {
     }
   }, []);
 
-  console.log(scrollY)
-
-  
+  console.log(scrollY);
 
 
   return (
     <div>
-     <Nav position={position}/>
-     <div>
-      <HeaderContent>
-        <div>
-          <p>iPhone 13 Pro</p>
-          <div className='flex-grow'></div>
-          <div><Link to=''><Btn>구입하기</Btn></Link></div>
-        </div>
-      </HeaderContent>
-      <TextBox>
-        <h1>iPhone 13 pro</h1>
-        <h2>이게 바로 프로.</h2>
-      </TextBox>
-      <ImgBox></ImgBox>
-      <SectionContent>
-       <div className='text-content'>
-        <ul>
-          <li className={ ( 725 < scrollY && scrollY < 928 ) ? 'show' : 'hide' }>비약적으로 강화된 카메라 시스템.</li>
-          <li className={`ml ${( 928 < scrollY && scrollY < 1100 ) ? 'show' : 'hide' }`}>뛰어난 반응성으로 매일 하던 제스처에 전혀 새로운 감각을 선사하는 디스플레이.</li>
-          <li className={`ml ${( 1100 < scrollY && scrollY < 1280 ) ? 'show' : 'hide' }`}>스마트폰 사상 가장 빠른 칩.</li>
-          <li className={`ml ${( 1280 < scrollY && scrollY < 1563 ) ? 'show' : 'hide' }`}>독보적인 내구성. 획기적인 도약을 이뤄낸 배터리 성능까지.</li>
-        </ul>
-        <p className={`ml ${( 1563 < scrollY ) ? 'show' : 'hide' }`}>이제 프로할 시간.</p>
-       </div>
-     </SectionContent>
-     </div>     
+      <Nav position={position} />
+      <div>
+        <HeaderContent>
+          <div>
+            <p onClick={() => window.location.reload() }>iPhone 13 Pro</p>
+            <div className='flex-grow'></div>
+            <div><Link to='/buy-iphone'><Btn>구입하기</Btn></Link></div>
+          </div>
+        </HeaderContent>
+        <TextBox>
+          <h1>iPhone 13 pro</h1>
+          <h2>이게 바로 프로.</h2>
+        </TextBox>
+        <ImgBox></ImgBox>
+        <SectionContent>
+          <div className='text-content'>
+            <ul>
+              <li className={(725 < scrollY && scrollY < 928) ? 'show' : 'hide'}>비약적으로 강화된 카메라 시스템.</li>
+              <li className={`ml ${(928 < scrollY && scrollY < 1100) ? 'show' : 'hide'}`}>뛰어난 반응성으로 매일 하던 제스처에 전혀 새로운 감각을 선사하는 디스플레이.</li>
+              <li className={`ml ${(1100 < scrollY && scrollY < 1330) ? 'show' : 'hide'}`}>스마트폰 사상 가장 빠른 칩.</li>
+              <li className={`ml ${(1330 < scrollY && scrollY < 1550) ? 'show' : 'hide'}`}>독보적인 내구성. 획기적인 도약을 이뤄낸 배터리 성능까지.</li>
+            </ul>
+            <p className={`ml ${(1550 < scrollY) ? 'show' : 'hide'}`}>이제 프로할 시간.</p>
+          </div>
+        </SectionContent>
+      </div>
     </div>
   )
 }

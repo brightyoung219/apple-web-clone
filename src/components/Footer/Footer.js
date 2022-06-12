@@ -13,7 +13,7 @@ const FooterContainer = styled.footer`
   .footer {
     width: 100%;
     margin: auto;
-    max-width: 970px;
+    max-width: 980px;
   }
 
   .borderB {

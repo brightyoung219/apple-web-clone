@@ -140,8 +140,8 @@ function LandingPage() {
           <TextCenter height={'125px'} mh={'100px'} size={'55px'} weight={'700'} pt={'50px'} ms={'33px'}>iPhone 13 Pro</TextCenter>
           <TextCenter size={'25px'} weight={'400'} ms={'18px'} >이게 바로 프로.</TextCenter>
           <div className='links'>
-            <Link to="/iphone-13">더 알아보기 &gt;</Link>
-            <Link to="" className='ml'>구입하기 &gt;</Link>
+            <Link to='/iphone-13'>더 알아보기 &gt;</Link>
+            <Link to='/buy-iphone' className='ml'>구입하기 &gt;</Link>
           </div>
          </div>
           
@@ -156,8 +156,8 @@ function LandingPage() {
           <TextCenter height={'80px'} mh={'50px'} size={'55px'} weight={'700'} ms={'33px'}>iPhone SE</TextCenter>
           <TextCenter size={'25px'} weight={'400'} ms={'18px'} >거침없는 파워. 실속 있는 선택.</TextCenter>
           <div className='links'>
-            <Link to="/iphone-13-pro">더 알아보기 &gt;</Link>
-            <Link to="" className='ml'>구입하기 &gt;</Link>
+            <Link to='#'>더 알아보기 &gt;</Link>
+            <Link to='#' className='ml'>구입하기 &gt;</Link>
           </div>
          </div>
           
