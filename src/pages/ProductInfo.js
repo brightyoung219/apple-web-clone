@@ -1,10 +1,16 @@
-import React, { useEffect, useState } from 'react';
+/*
+* 작성자 : 김소영
+* iPhone13 제품의 디테일 정보를 담고있는 페이지입니다.
+* 업데이트 : 2022-06-14
+*/
+
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import Nav from '../components/Navbar/Nav';
 import iphone13pro from '../img/apple/iphone13-pro.png';
-import { newItem } from '../store/cartItemSlice';
+import { addItem } from '../store/cartItemSlice';
 
 const RibbonAnimation = keyframes`
   0% {
@@ -190,7 +196,7 @@ function ProductInfo() {
             <Link to ='/cart'>
               <button
               className='btn'
-              onClick={ ()=>{ dispatch(newItem({id : 3, title : 'iPhone 13 Pro', price : 1350000, count : 1})) }}>
+              onClick={ ()=>{ dispatch(addItem({id : 0, title : 'iPhone 13 Pro', price : 1350000, count : 1})) }}>
                 장바구니 담기
               </button>
             </Link>

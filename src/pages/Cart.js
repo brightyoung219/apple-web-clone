@@ -1,9 +1,15 @@
-import React, { useEffect, useState } from 'react';
+/*
+* 작성자 : 김소영
+* 장바구니 페이지로 상품의 수량 변경, 삭제 기능이 구현되어있습니다.
+* 업데이트 : 2022-06-14
+*/
+
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Nav from '../components/Navbar/Nav';
-import { plus, minus } from '../store/cartItemSlice.js'
+import { plus, minus, deleteItem } from '../store/cartItemSlice.js';
+
 
 const BagContainer = styled.div`
   padding-top: 50px;
@@ -57,10 +63,6 @@ const CartItem = styled.ol`
     display: flex;
   }
 
-  .img {
-    width: 200px;
-  }
-
   .title {
     flex-basis: 45%;
     font-size: 24px;
@@ -100,8 +102,9 @@ const CartItem = styled.ol`
 function Cart() {
   const [position, setPosition] = useState('state'); //Navbar position
 
-  const item = useSelector( state => state.cartItem );
-  console.log(item)
+  // cartItemSlice.js에서 장바구니에 담긴 상품의 정보를 가져옵니다.
+  
+  const item = useSelector(state => state.cartItem);
 
   let dispatch = useDispatch();
 
@@ -115,25 +118,24 @@ function Cart() {
           <button>결제</button>
         </Header>
         <CartItem>
-          { item.map( (a,i)=>  
+          {item.map((a, i) =>
             <li key={i}>
               <div className='flex-box'>
-                <div className='img'>img</div>
-                <div className='flex-box' style={{width: '100%'}}>
+                <div className='flex-box' style={{ width: '100%' }}>
                   <div className='title'>{a.title}</div>
                   <div className='quantity'>
-                    <button onClick={ ()=>{ dispatch(minus(i))} }>-</button>
+                    <button onClick={() => { dispatch(minus(item[i].id)) }}>-</button>
                     <span>{a.count}</span>
-                    <button onClick={ ()=>{ dispatch(plus(i))} }>+</button>
+                    <button onClick={() => { dispatch(plus(item[i].id)) }}>+</button>
                   </div>
                   <div className='price'>
                     <p>{a.price * a.count}</p>
-                    <p className='delete'>삭제</p>
+                    <p className='delete' onClick={() => { dispatch(deleteItem(item[i].id)) }}>삭제</p>
                   </div>
                 </div>
               </div>
             </li>
-           )}
+          )}
         </CartItem>
       </BagContainer>
     </div>
