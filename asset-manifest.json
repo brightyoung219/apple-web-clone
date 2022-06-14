@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/apple-web-clone/static/js/main.234d8098.js",
+    "main.js": "/apple-web-clone/static/js/main.7a3be4ca.js",
     "static/media/unit3.png": "/apple-web-clone/static/media/unit3.0f2414231f35c3d9eb8f.png",
     "static/media/unit6.png": "/apple-web-clone/static/media/unit6.682f5d6d51e303f63f2d.png",
     "static/media/unit2.png": "/apple-web-clone/static/media/unit2.c3d3dd0acc2bce7d4508.png",
@@ -19,9 +19,9 @@
     "static/media/apple_image.svg": "/apple-web-clone/static/media/apple_image.dca800f189014a3c3eab2c30284bea83.svg",
     "index.html": "/apple-web-clone/index.html",
     "static/media/bag_image.svg": "/apple-web-clone/static/media/bag_image.41f41d59c15e30fc042ccb9a378a3e5e.svg",
-    "main.234d8098.js.map": "/apple-web-clone/static/js/main.234d8098.js.map"
+    "main.7a3be4ca.js.map": "/apple-web-clone/static/js/main.7a3be4ca.js.map"
   },
   "entrypoints": [
-    "static/js/main.234d8098.js"
+    "static/js/main.7a3be4ca.js"
   ]
 }
