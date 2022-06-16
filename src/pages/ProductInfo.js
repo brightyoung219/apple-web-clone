@@ -71,7 +71,7 @@ const RibbonContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: ${props => props.theme.lightGray};;
+  background-color: ${props => props.theme.lightGray};
   animation: ${RibbonAnimation} 2.2s ease-in-out;
 
   p{

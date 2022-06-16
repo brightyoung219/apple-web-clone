@@ -19,11 +19,13 @@ let cartItem = createSlice({
     // action.payload로 장바구니 아이템의 id값을 전달받습니다.
 
     plus(state, action) {
-      state[action.payload].count++;
+      const index = state.findIndex((item) => item.id === action.payload)
+      state[index].count++;
     },
     minus(state, action) {
-      if (state[action.payload].count > 1) {
-        state[action.payload].count--;
+      const index = state.findIndex((item) => item.id === action.payload)
+      if (state[index].count > 1) {
+        state[index].count--;
       }
     },
 
