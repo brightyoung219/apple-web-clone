@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/apple-web-clone/static/js/main.7a3be4ca.js",
+    "main.js": "/apple-web-clone/static/js/main.528cb11d.js",
     "static/media/unit3.png": "/apple-web-clone/static/media/unit3.0f2414231f35c3d9eb8f.png",
     "static/media/unit6.png": "/apple-web-clone/static/media/unit6.682f5d6d51e303f63f2d.png",
     "static/media/unit2.png": "/apple-web-clone/static/media/unit2.c3d3dd0acc2bce7d4508.png",
@@ -9,19 +9,21 @@
     "static/media/iphone13-p.png": "/apple-web-clone/static/media/iphone13-p.3ddce9aa0861ed880a64.png",
     "static/media/unit5.png": "/apple-web-clone/static/media/unit5.240d6c70de69fe3576e6.png",
     "static/media/iphone13-pro.png": "/apple-web-clone/static/media/iphone13-pro.09885792bb718e0698c3.png",
+    "static/media/ipad.jpeg": "/apple-web-clone/static/media/ipad.c6a33381fec7561dc5e8.jpeg",
     "static/media/unit1.png": "/apple-web-clone/static/media/unit1.c47aa0f5c37aadef9c01.png",
     "static/media/iphone13-m.png": "/apple-web-clone/static/media/iphone13-m.bebe5b8ebc5a98e395dc.png",
     "static/media/iphoneSE-m.png": "/apple-web-clone/static/media/iphoneSE-m.5f14c7ad0ff6a892d9d4.png",
     "static/media/iphone13_large.jpeg": "/apple-web-clone/static/media/iphone13_large.75320265f4e17e11fcd7.jpeg",
     "static/media/iphone13_wallpaper.jpeg": "/apple-web-clone/static/media/iphone13_wallpaper.e671ab742f9f948a954b.jpeg",
     "static/media/iphone13_small.jpeg": "/apple-web-clone/static/media/iphone13_small.6dbd822a78856f99b12a.jpeg",
+    "static/media/macbook.jpeg": "/apple-web-clone/static/media/macbook.faf91618710a9b675b78.jpeg",
     "static/media/iphone13_medium.jpeg": "/apple-web-clone/static/media/iphone13_medium.5743580a1696c5482191.jpeg",
     "static/media/apple_image.svg": "/apple-web-clone/static/media/apple_image.dca800f189014a3c3eab2c30284bea83.svg",
     "index.html": "/apple-web-clone/index.html",
     "static/media/bag_image.svg": "/apple-web-clone/static/media/bag_image.41f41d59c15e30fc042ccb9a378a3e5e.svg",
-    "main.7a3be4ca.js.map": "/apple-web-clone/static/js/main.7a3be4ca.js.map"
+    "main.528cb11d.js.map": "/apple-web-clone/static/js/main.528cb11d.js.map"
   },
   "entrypoints": [
-    "static/js/main.7a3be4ca.js"
+    "static/js/main.528cb11d.js"
   ]
 }
