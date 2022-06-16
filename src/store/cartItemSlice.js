@@ -1,7 +1,7 @@
 /*
 * 작성자 : 김소영
 * 장바구니 상품의 정보를 담고있는 slice 파일입니다.
-* 업데이트 : 2022-06-14
+* 업데이트 : 2022-06-15
 */
 
 import { createSlice } from "@reduxjs/toolkit";

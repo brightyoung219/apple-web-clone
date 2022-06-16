@@ -5,11 +5,11 @@ export const LinkItems = [
   },
   {
     title: 'Mac',
-    url: '#'
+    url: '/buy-macbook'
   },
   {
     title: 'ipad',
-    url: '#'
+    url: '/buy-ipad'
   },
   {
     title: 'iPhone',
