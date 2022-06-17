@@ -1,6 +1,12 @@
+/*
+* 작성자 : 김소영
+* navbar 컴포넌트 파일 입니다.
+* 업데이트 : 2022-06-17
+*/
+
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons"
 import bagIcon from '../../img/bag_image.svg';
@@ -9,10 +15,14 @@ import { LinkItems } from './LinkItems';
 
 
 const NavContainer = styled.nav`
-  position: ${ props => props.position };
-  width: 100vw;
+
+  /* LandingPage.js 페이지에서만 position fixed,
+     그 외 페이지에서는 props로 static을 전달 받습니다. */
+
+  position: ${props => props.position};
+  width: 100%;
   backdrop-filter: saturate(180%) blur(20px);
-  background-color: ${ props => props.toggle ? 'black' : 'rgba(0,0,0,0.8)' };
+  background-color: ${props => props.toggle ? 'black' : 'rgba(0,0,0,0.8)'};
   color: ${props => props.theme.lightGray};
   height: 44px;
 
@@ -39,10 +49,11 @@ const Content = styled.div`
   justify-content: space-between;
   max-width: 980px;
   margin: 0 auto;
- 
+  padding: 0 20px;
 
   @media screen and (max-width: 768px) {
-      position: relative;
+    height: 48px;
+    position: relative;
     }
 `
 
@@ -64,6 +75,7 @@ const Logo = styled.div`
       height: 48px;
       position: absolute;
       left: 50%;
+      
     }
 `
 
@@ -83,7 +95,7 @@ const CartIcon = styled.div`
 
   @media screen and (max-width: 768px) {
       height: 48px;
-      position: absolute;
+      position: fixed;
       right: 22px;
     }
 `
@@ -133,14 +145,13 @@ const Links = styled.ul`
   @media screen and (max-width: 768px) {
 
         flex-direction: column;
-        /* display: ${ props => ( props.toggle? 'block' : 'none' ) }; */
         align-items: flex-start;
         height: 100%;
         position: absolute;
         top: 48px;
         font-size: 15px;
         padding: 12px 0;
-        top:  ${ props => ( props.toggle? '48px' : '-500px' ) };
+        top:  ${props => (props.toggle ? '48px' : '-500px')};
         transition: all 1s cubic-bezier(.32,.1,.24,.99);
 
      li {
@@ -152,14 +163,16 @@ const Links = styled.ul`
 `
 
 
-function Nav( {position} ) {
+function Nav({ position }) {
+
+  // clicked : max-width 768px 이하에서 메뉴리스트 토글버튼 구현을 위한 변수입니다.
 
   const [clicked, setClicked] = useState(false);
   const onClick = () => setClicked(!clicked);
 
   return (
     <>
-      <NavContainer toggle={clicked} position={ position }>
+      <NavContainer toggle={clicked} position={position}>
         <Content>
           <MenuToggle onClick={onClick}>
             <FontAwesomeIcon icon={clicked ? faXmark : faBars} />
