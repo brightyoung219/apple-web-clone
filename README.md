@@ -18,7 +18,7 @@ styled-components
 ### `navbar 구현`
 - 아이콘 Font Awesome 사용
 - 미디어쿼리를 활용한 모바일 화면 navbar 구현
-- props를 활용하여 랜딩페이지에서는 position : fixed, 그 외 페이지에서는 position : static 되도록 구현
+- props를 활용하여 랜딩페이지에서는 position : fixed, 그 외 페이지에서는 position : state 되도록 구현
 - 개발일지 [바로가기](https://velog.io/@nosiba/%EC%95%A0%ED%94%8C%ED%81%B4%EB%A1%A0-styled-components%EB%A1%9C-navbar-%EA%B5%AC%ED%98%84)
 
 ![navbar](https://user-images.githubusercontent.com/104407191/174322757-45e9e81b-522a-427a-bea0-714d08579b7f.gif)
