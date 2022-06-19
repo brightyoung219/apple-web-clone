@@ -1,3 +1,9 @@
+/*
+* 작성자 : 김소영
+* iPhone13 제품 소개 페이지입니다.
+* 업데이트 : 2022-06-19
+*/
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -194,7 +200,6 @@ const SectionContent = styled.div`
 
 function Iphone13() {
 
-  const [position, setPosition] = useState('state'); //Navbar position
   const [scrollY, setScrollY] = useState(0);
 
   const handleScroll = () => {
@@ -215,7 +220,7 @@ function Iphone13() {
 
   return (
     <div>
-      <Nav position={position} />
+      <Nav />
       <div>
         <HeaderContent>
           <div>

@@ -1,7 +1,7 @@
 /*
 * 작성자 : 김소영
 * iPhone13 제품의 디테일 정보를 담고있는 페이지입니다.
-* 업데이트 : 2022-06-14
+* 업데이트 : 2022-06-19
 */
 
 import React, { useState } from 'react';
@@ -163,12 +163,11 @@ const InfoBox = styled.div`
 
 function ProductInfo() {
 
-  const [position, setPosition] = useState('state'); //Navbar position
   let dispatch = useDispatch();
 
   return (
     <div>
-      <Nav position={position} />
+      <Nav />
       <HeaderContent>
         <div>
           <p>iPhone 13 Pro</p>

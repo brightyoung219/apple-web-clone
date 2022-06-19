@@ -1,7 +1,7 @@
 /*
 * 작성자 : 김소영
 * macbook 제품의 디테일 정보를 담고있는 페이지입니다.
-* 업데이트 : 2022-06-16
+* 업데이트 : 2022-06-19
 */
 
 import React, { useState } from 'react';
@@ -131,12 +131,11 @@ const InfoBox = styled.div`
 
 function MacBook() {
 
-  const [position, setPosition] = useState('state'); //Navbar position
   let dispatch = useDispatch();
 
   return (
     <div>
-      <Nav position={position} />
+      <Nav />
       <HeaderContent>
         <div>
           <p>iPhone 13 Pro</p>

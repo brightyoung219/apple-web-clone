@@ -1,7 +1,7 @@
 /*
 * 작성자 : 김소영
 * 장바구니 페이지로 상품의 수량 변경, 삭제 기능이 구현되어있습니다.
-* 업데이트 : 2022-06-14
+* 업데이트 : 2022-06-19
 */
 
 import React, { useState } from 'react';
@@ -100,7 +100,6 @@ const CartItem = styled.ol`
 `;
 
 function Cart() {
-  const [position, setPosition] = useState('state'); //Navbar position
 
   // cartItemSlice.js에서 장바구니에 담긴 상품의 정보를 가져옵니다.
   
@@ -110,7 +109,7 @@ function Cart() {
 
   return (
     <div>
-      <Nav position={position} />
+      <Nav />
       <BagContainer>
         <Header>
           <h1>장바구니에 들어 있는 제품입니다.</h1>
