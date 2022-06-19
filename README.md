@@ -1,6 +1,9 @@
 # 애플 홈페이지 클론
 
-데모 [바로가기](https://brightyoung219.github.io/apple-web-clone/)
+- 데모 [바로가기](https://brightyoung219.github.io/apple-web-clone/)
+- 랜딩 페이지 및 간단한 서브페이지로 구성
+<img width="1032" alt="스크린샷 2022-06-18 오전 1 05 29" src="https://user-images.githubusercontent.com/104407191/174482618-67a7960c-5f84-43bc-bad3-e9be8ead1489.png">
+
 
 ## 프로젝트 목표
 
